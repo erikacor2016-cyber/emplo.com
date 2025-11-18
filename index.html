@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Vacante Auxiliar Administrativo</title>
+    <style>
+        body {
+            font-family: Arial;
+            background: #e7f0ff;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background: #23b1e9;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        section {
+            padding: 20px;
+        }
+
+        .btn {
+            display: inline-block;
+            background: #1fa57d;
+            color: white;
+            padding: 12px 20px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-size: 16px;
+        }
+
+        .btn:hover {
+            background: #ce56a0;
+        }
+
+        form {
+            background: white;
+            padding: 25px;
+            border-radius: 10px;
+            max-width: 600px;
+            margin: auto;
+        }
+
+        input, textarea {
+            width: 100%;
+            padding: 10px;
+            margin-top: 8px;
+            margin-bottom: 16px;
+            border-radius: 6px;
+            border: 1px solid #aaa;
+        }
+
+        label {
+            font-weight: bold;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        #mensajeExito {
+            background: #d5e8ff;
+            color: #60affa;
+            padding: 20px;
+            border-radius: 10px;
+            display: none;
+            text-align: center;
+            max-width: 500px;
+            margin: 30px auto;
+            font-size: 18px;
+            font-weight: bold;
+        }
+    </style>
+
+    <script>
+        function mostrarFormulario() {
+            document.getElementById("paginaVacante").style.display = "none";
+            document.getElementById("paginaFormulario").style.display = "block";
+        }
+
+        function mostrarExito() {
+            document.getElementById("paginaFormulario").style.display = "none";
+            document.getElementById("mensajeExito").style.display = "block";
+        }
+    </script>
+</head>
+
+<body>
+
+    <header>
+        <h1>Vacante: Auxiliar Administrativo</h1>
+    </header>
+
+    <!-- PÁGINA PRINCIPAL -->
+    <section id="paginaVacante">
+        <h2>Información de la Vacante</h2>
+
+        <p>📌 <b>Cargo:</b> Auxiliar Administrativo</p>
+        <p>📍 <b>Ubicación:</b> Bogotá, Colombia</p>
+        <p>💰 <b>Salario:</b> $2.000.000 + todas las prestaciones de ley</p>
+        <p>🕒 <b>Horario:</b> Lunes a viernes – 8:00 am a 5:00 pm</p>
+        <p>📄 <b>Contrato:</b> Término fijo con opción de renovación</p>
+        <p>🎓 <b>Estudios:</b> Técnico o Tecnólogo administrativo</p>
+        <p>🧠 <b>Experiencia:</b> Mínimo 1 año</p>
+        <p>💻 <b>Conocimientos:</b> Manejo de Excel, archivo, comunicaciones</p>
+
+        <br>
+
+        <a class="btn" href="#" onclick="mostrarFormulario(); return false;">
+            Ingresar al Formulario
+        </a>
+    </section>
+
+    <!-- FORMULARIO -->
+    <section id="paginaFormulario" class="hidden">
+        <h2 style="text-align:center;">Formulario de Aplicación</h2>
+
+        <form action="https://formspree.io/f/xzzynray" method="POST" onsubmit="mostrarExito(); return true;">
+
+            <label>Nombre completo</label>
+            <input name="Nombre" type="text" required>
+
+            <label>Correo electrónico</label>
+            <input name="Correo" type="email" required>
+
+            <label>Número de contacto</label>
+            <input name="Teléfono" type="tel" required>
+
+            <label>Experiencia Profesional</label>
+            <textarea name="Experiencia Profesional" rows="4"></textarea>
+
+            <label>Experiencia Laboral</label>
+            <textarea name="Experiencia Laboral" rows="4"></textarea>
+
+            <label>¿Por qué quieres aplicar a este cargo?</label>
+            <textarea name="Motivo" rows="4"></textarea>
+
+            <button type="submit" class="btn" style="width:100%;">Enviar Formulario</button>
+        </form>
+    </section>
+
+    <!-- MENSAJE DE ÉXITO -->
+    <div id="mensajeExito">
+        ⭐ Gracias por postularte.  
+        Muy pronto nos comunicaremos contigo. ⭐
+    </div>
+
+</body>
+</html>
+
